@@ -35,11 +35,14 @@ Servidor ASGI: Uvicorn
 O projeto segue uma arquitetura em camadas para garantir a separação de responsabilidades e a manutenibilidade.
 /
 ├── alembic/              # Scripts de migração do Alembic
+│   └── versions/
 ├── app/                  # Código fonte principal da aplicação
+│   ├── init.py
 │   ├── api/              # Camada de Apresentação (API)
 │   │   └── v1/
-│   │       ├── endpoints/  # Módulos de rotas (users.py, login.py, etc.)
+│   │       ├── init.py
 │   │       ├── dependencies.py
+│   │       ├── endpoints/  # Módulos de rotas (users.py, login.py, etc.)
 │   │       └── router.py   # Agregador dos roteadores da v1
 │   ├── core/             # Lógica central: config, database, security
 │   ├── crud/             # Camada de Acesso a Dados (Repository Pattern)
